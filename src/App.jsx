@@ -39,7 +39,7 @@ function App() {
 		console.log("weather data name  ====>", weatherData?.name);
 	}
 
-	getData()
+	// getData()
 
 
 	const getUserLocation = () => {
@@ -60,6 +60,7 @@ function App() {
 		<div className="p-6 bg-blue-50">
 			<h1>Weather App</h1>
 			<WeatherCard weatherData={weatherData} />
+
 		</div>
 	)
 }
