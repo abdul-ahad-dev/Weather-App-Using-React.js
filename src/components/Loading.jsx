@@ -1,29 +1,28 @@
 const Loading = ({ size = 'medium', color = 'bg-white', padding = '' }) => {
     let dotSize, dotPadding;
 
-    // Adjust dot size based on the text size (small, medium, large)
     switch (size) {
         case 'small':
-            dotSize = 'w-2 h-2';
+            dotSize = 'w-1 h-2';
             dotPadding = padding;
             break;
         case 'large':
-            dotSize = 'w-6 h-6';
+            dotSize = 'w-4 h-8';
             dotPadding = 'py-4';
             break;
 
         case 'medium':
         default:
-            dotSize = 'w-4 h-4';
+            dotSize = 'w-3 h-6';
             dotPadding = padding;
             break;
     }
 
     return (
         <div className={`${dotPadding} flex justify-center items-center space-x-1`}>
-            <div className={`${dotSize} ${color} rounded-full animate-bounce`}></div>
-            <div className={`${dotSize} ${color} rounded-full animate-bounce`}></div>
-            <div className={`${dotSize} ${color} rounded-full animate-bounce`}></div>
+            <div className={`${dotSize} ${color} animate-bounce delay-75`}></div>
+            <div className={`${dotSize} ${color} animate-bounce delay-[0.5s]`}></div>
+            <div className={`${dotSize} ${color} animate-bounce delay-[1s]`}></div>
         </div>
     );
 };
