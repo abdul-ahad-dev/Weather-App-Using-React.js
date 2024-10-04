@@ -7,7 +7,11 @@ export default function WeatherCard({ weatherData }) {
 
     useEffect(() => {
         if (weatherData != null) setIsLoading(false);
-    }, [weatherData])
+    }, [weatherData]);
+
+    const kelvinToCelsius = (temp) => {
+        return (temp - 273.15).toFixed(2);
+    }
 
     return (
         <div className="md:w-1/2 mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden">
@@ -52,19 +56,19 @@ export default function WeatherCard({ weatherData }) {
                     <p className="text-lg flex gap-2">
                         <span className="font-semibold">Temperature:</span>
                         {isLoading ? <Loading size='small' color='bg-black' />
-                            : `${weatherData?.main?.temp}°C`}
+                            : `${kelvinToCelsius(weatherData?.main?.temp)}°C`}
                     </p>
 
                     <p className="text-sm text-gray-600 flex gap-2">
                         <span>Feels like:</span>
                         {isLoading ? <Loading size='small' color='bg-gray-600' />
-                            : `${weatherData?.main?.feels_like}°C`}
+                            : `${kelvinToCelsius(weatherData?.main?.feels_like)}°C`}
                         <span>| Min:</span>
                         {isLoading ? <Loading size='small' color='bg-gray-600' />
-                            : `${weatherData?.main?.temp_min}°C`}
+                            : `${kelvinToCelsius(weatherData?.main?.temp_min)}°C`}
                         <span>| Max:</span>
                         {isLoading ? <Loading size='small' color='bg-gray-600' />
-                            : `${weatherData?.main?.temp_max}°C`}
+                            : `${kelvinToCelsius(weatherData?.main?.temp_max)}°C`}
                     </p>
 
                     <p className="text-sm text-gray-600 flex gap-2">

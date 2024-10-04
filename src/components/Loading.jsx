@@ -10,7 +10,6 @@ const Loading = ({ size = 'medium', color = 'bg-white', padding = '' }) => {
             dotSize = 'w-4 h-8';
             dotPadding = 'py-4';
             break;
-
         case 'medium':
         default:
             dotSize = 'w-3 h-6';

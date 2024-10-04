@@ -37,26 +37,20 @@ export default function App() {
 		Swal.fire({
 			title: "Allow Location!",
 			text: "We need access to your location to fetch the weather data.",
-			icon: "info",	
+			icon: "info",
 		});
 		getUserLocation();
 	}
 
-	return (
-		<div className="relative min-h-screen py-10 px-5 flex items-center">
+	return ( 
+		<div className="relative min-h-screen py-10 px-5 flex items-center overflow-hidden">
 			<div
+				className="w-full scale-110 absolute top-0 left-0 right-0 bottom-0 z-0 "
 				style={{
-					width: '100%',
 					backgroundImage: `url(${backgroundImage})`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 					filter: 'blur(4px)',
-					position: 'absolute',
-					top: 0,
-					left: 0,
-					right: 0,
-					bottom: 0,
-					zIndex: 0,
 				}}
 			></div>
 
@@ -81,7 +75,6 @@ export default function App() {
 							Allow Location Access
 						</button>
 					</div>}
-
 				<p
 					style={{ textShadow: '1px 1px 10px rgba(255, 255, 255, 0.5)' }}
 					className="text-gray-900 text-center font-semibold mt-12"
@@ -91,5 +84,4 @@ export default function App() {
 			</div>
 		</div>
 	);
-
 }
